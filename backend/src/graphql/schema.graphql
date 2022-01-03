@@ -1,0 +1,18 @@
+type Query {
+  ping: String!
+  messages: [Message!]
+}
+
+type Mutation {
+  createMessage(title: String!, content: String!, author: String!): Message 
+  # No le colocamos ! porque podria devolver null o vacio
+  # Dentro de los paréntesis, le pasamos la información que necesiamo
+  # para crear un nuevo mensaje
+}
+
+type Message {
+  _id: ID!
+  title: String!
+  content: String!
+  author: String!
+}
